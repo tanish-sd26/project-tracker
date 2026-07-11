@@ -48,29 +48,29 @@ export default function Dashboard() {
     <div>
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <header className="mb-12 text-center">
-          <h1 className="text-6xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+          <h1 className="text-5xl font-bold tracking-tight text-gray-900">Dashboard</h1>
           <p className="mt-2 text-lg text-gray-600">Overview of projects, tasks and current progress.</p>
         </header>
 
         {/* Section 1: Statistics Cards */}
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4 mb-16">
           <div className="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:border-gray-300 flex flex-col items-center justify-center min-h-40">
-            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">▦ Active Projects</div>
+            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">💻 Active Projects</div>
             <div className="mt-4 text-5xl font-bold text-gray-900">{activeProjects}</div>
           </div>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:border-gray-300 flex flex-col items-center justify-center min-h-40">
-            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">✓ Total Tasks</div>
+            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">✔️ Total Tasks</div>
             <div className="mt-4 text-5xl font-bold text-gray-900">{tasks.length}</div>
           </div>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:border-gray-300 flex flex-col items-center justify-center min-h-40">
-            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">! Pending Tasks</div>
+            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">❗ Pending Tasks</div>
             <div className="mt-4 text-5xl font-bold text-yellow-600">{pendingTasks}</div>
           </div>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:border-gray-300 flex flex-col items-center justify-center min-h-40">
-            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">● Overdue Tasks</div>
+            <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">🔴 Overdue Tasks</div>
             <div className="mt-4 text-5xl font-bold text-red-600">{overdueTasks.length}</div>
           </div>
         </section>
