@@ -82,28 +82,28 @@ export function TaskForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow">
-      {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}
+    <form onSubmit={handleSubmit} className="mx-auto max-w-2xl rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+      {error && <div className="mb-5 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</div>}
 
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Task Title *</label>
+      <div className="mb-5">
+        <label className="mb-2 block text-sm font-medium text-gray-700">Task Title <span className="text-red-600">*</span></label>
         <input
           type="text"
           name="title"
           value={formData.title}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="h-11 w-full rounded-lg border border-gray-300 px-3 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
           placeholder="Enter task title"
         />
       </div>
 
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Project *</label>
+      <div className="mb-5">
+        <label className="mb-2 block text-sm font-medium text-gray-700">Project <span className="text-red-600">*</span></label>
         <select
           name="projectId"
           value={formData.projectId}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="h-11 w-full rounded-lg border border-gray-300 px-3 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
         >
           <option value="">Select a project</option>
           {projects.map((project) => (
@@ -114,26 +114,26 @@ export function TaskForm({
         </select>
       </div>
 
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Description</label>
+      <div className="mb-5">
+        <label className="mb-2 block text-sm font-medium text-gray-700">Description</label>
         <textarea
           name="description"
           value={formData.description}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
           placeholder="Task description"
           rows={3}
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="mb-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium mb-2">Status</label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">Status</label>
           <select
             name="status"
             value={formData.status}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="h-11 w-full rounded-lg border border-gray-300 px-3 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
           >
             <option>Todo</option>
             <option>In Progress</option>
@@ -142,12 +142,12 @@ export function TaskForm({
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Priority</label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">Priority</label>
           <select
             name="priority"
             value={formData.priority}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="h-11 w-full rounded-lg border border-gray-300 px-3 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
           >
             <option>Low</option>
             <option>Medium</option>
@@ -156,14 +156,14 @@ export function TaskForm({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="mb-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium mb-2">Assign To</label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">Assign To</label>
           <select
             name="assigneeId"
             value={formData.assigneeId}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="h-11 w-full rounded-lg border border-gray-300 px-3 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
           >
             <option value="">Unassigned</option>
             {teamMembers.map((member) => (
@@ -175,29 +175,29 @@ export function TaskForm({
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Due Date</label>
+          <label className="mb-2 block text-sm font-medium text-gray-700">Due Date</label>
           <input
             type="date"
             name="dueDate"
             value={formData.dueDate}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="h-11 w-full rounded-lg border border-gray-300 px-3 text-sm outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
           />
         </div>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
         <button
           type="submit"
           disabled={loading}
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+          className="h-11 rounded-lg bg-blue-600 px-5 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? 'Saving...' : 'Save Task'}
         </button>
         <button
           type="button"
           onClick={onCancel}
-          className="bg-gray-300 text-gray-700 px-6 py-2 rounded hover:bg-gray-400"
+          className="h-11 rounded-lg border border-gray-300 bg-white px-5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
         >
           Cancel
         </button>
