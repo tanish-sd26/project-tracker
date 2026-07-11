@@ -60,16 +60,16 @@ export default function ClientsPage() {
       </div>
 
       {showForm && (
-        <div className="mb-10 rounded-xl border border-gray-200 bg-gray-50 p-8 shadow-sm">
-          <ClientForm
-            onSuccess={() => {
-              setShowForm(false);
-              fetchClients();
-            }}
-            onCancel={() => setShowForm(false)}
-          />
-        </div>
-      )}
+  <div className="mb-10 mx-auto max-w-2xl rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
+    <ClientForm
+      onSuccess={() => {
+        setShowForm(false);
+        fetchClients();
+      }}
+      onCancel={() => setShowForm(false)}
+    />
+  </div>
+)}
 
       {clients.length === 0 ? (
         <div className="rounded-xl border border-gray-200 bg-white p-12 text-center shadow-sm">
@@ -78,7 +78,7 @@ export default function ClientsPage() {
           <p className="mt-1 text-sm text-gray-500">Create your first client to get started.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
           {clients.map((client) => (
             <div key={client.id} className="flex flex-col h-full rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-lg hover:border-gray-300">
               <div className="p-10">
